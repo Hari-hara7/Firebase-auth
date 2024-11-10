@@ -2,6 +2,8 @@
 import { useState } from "react";
 import { auth, signInWithEmailAndPassword, signInWithPopup, googleProvider } from "../firebase";
 import { useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGoogle } from "@fortawesome/free-brands-svg-icons";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -46,7 +48,8 @@ const Login = () => {
       <button onClick={handleEmailLogin} className="w-full px-4 py-2 my-2 bg-blue-500 text-white rounded">
         Login with Email
       </button>
-      <button onClick={handleGoogleLogin} className="w-full px-4 py-2 my-2 bg-yellow-500 text-white rounded">
+      <button onClick={handleGoogleLogin} className="w-full px-4 py-2 my-2 flex items-center justify-center bg-yellow-500 text-white rounded">
+        <FontAwesomeIcon icon={faGoogle} className="mr-2" />
         Login with Google
       </button>
     </div>
